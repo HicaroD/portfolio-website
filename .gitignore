@@ -1,2 +1,3 @@
 venv
 website_portfolio/.env
+website_portfolio/__pycache__
