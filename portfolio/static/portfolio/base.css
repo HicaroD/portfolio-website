@@ -1,0 +1,48 @@
+body {
+    background-color: #595260;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.navbar li {
+    display: inline-block;
+    color: #FFC93C;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.navbar a {
+    color: #FFC93C;
+    padding: 10px;
+}
+
+.navbar a:hover{
+    border-bottom:3px solid #FFC93C;
+}
+
+.intro {
+    color: white;
+}
+
+.socials, .navbar ul {
+    list-style-type: none;
+}
+
+.socials li {
+    display: inline-block;
+    padding: 5px;
+}
+
+.socials a {
+    color: #999;
+}
+
+hr {
+    color: #FFC93C;
+    padding: 2px solid;
+    width: 45%;
+}
