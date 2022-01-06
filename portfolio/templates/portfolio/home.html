@@ -1,0 +1,15 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %} Articles {% endblock title %}
+
+{% block content %}
+
+{% for article in articles %}
+
+<div class="article-post">
+    <h3> {{article.posted}} | {{article.title}} </h2>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
