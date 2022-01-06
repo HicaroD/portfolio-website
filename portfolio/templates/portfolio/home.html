@@ -6,8 +6,8 @@
 
 {% for article in articles %}
 
-<div class="article-post">
-    <h3> {{article.posted}} | {{article.title}} </h2>
+<div class="article">
+    <p> [{{article.posted|date:"Y, F d"}}] {{article.title}} </p>
 </div>
 
 {% endfor %}
