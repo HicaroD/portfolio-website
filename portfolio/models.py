@@ -6,5 +6,8 @@ class Article(models.Model):
     updated = models.DateTimeField(auto_now=True)
     body = models.TextField()
 
+    def __str__(self):
+        return self.title
+
     class Meta():
         ordering = ['-posted']
