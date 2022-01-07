@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 from .models import Article
 
 def index(request):
@@ -13,3 +13,7 @@ def about_me(request):
 
 def contact(request):
     return render(request, "portfolio/contact.html")
+
+def article(request, article_id):
+    article = get_object_or_404(Article, id=article_id)
+    return render(request, "portfolio/article.html", {'article':article})
