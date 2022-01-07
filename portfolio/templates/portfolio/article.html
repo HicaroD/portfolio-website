@@ -1,0 +1,12 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<div class="article-post">
+    <h1> {{article.title}} </h1> 
+    <p id="updated"> Last time updated: {{article.updated|date:"F d"}} <p>
+
+    <p> {{article.body}} </p>
+</div>
+
+{% endblock content %}
