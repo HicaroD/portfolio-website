@@ -24,7 +24,7 @@ a {
     padding: 10px;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     border-bottom:3px solid #FFC93C;
 }
 
@@ -57,8 +57,4 @@ hr {
     margin-right: auto;
     width: 45%;
     padding: 0px;
-}
-
-.article p {
-    color: #FFF8B6;
 }
