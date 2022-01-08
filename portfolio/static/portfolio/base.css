@@ -58,3 +58,15 @@ hr {
     width: 45%;
     padding: 0px;
 }
+
+.article p {
+    color: #FFC93C;
+}
+
+.article a {
+    border-bottom: solid 1px;
+}
+
+.article a:visited {
+    color:white;
+}
