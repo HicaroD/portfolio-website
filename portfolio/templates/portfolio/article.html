@@ -1,12 +1,17 @@
 {% extends 'portfolio/base.html' %}
 
+{% block secondary_title %} {{article.title}} {% endblock secondary_title %}
+
 {% block content %}
 
 <div class="article-post">
-    <h1> {{article.title}} </h1> 
     <p id="updated"> Last time updated: {{article.updated|date:"F d"}} <p>
+    {% load markdownify %}
 
-    <p> {{article.body}} </p>
+    <div class="body"> 
+        {{ article.body|markdownify }}
+    </div>
+
 </div>
 
 {% endblock content %}
