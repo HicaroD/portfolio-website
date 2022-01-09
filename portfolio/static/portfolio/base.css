@@ -47,7 +47,6 @@ a {
 
 hr {
     color: #FFC93C;
-    padding: 2px solid;
     width: 45%;
 }
 
@@ -65,6 +64,7 @@ hr {
 
 .article a {
     border-bottom: solid 1px;
+    color: white;
 }
 
 .article a:visited {
