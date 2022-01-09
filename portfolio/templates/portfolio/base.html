@@ -13,14 +13,14 @@
 
     <body>
         <header class="navbar">
-            <ul>
-                <li><a href="{% url 'index' %}">HOME</a></li>
-                <li><a href="{% url 'about_me' %}">ABOUT ME</a></li>
-                <li><a href="{% url 'contact' %}">CONTACT</a></li>
-            </ul>
+        <ul>
+            <li><a href="{% url 'index' %}">HOME</a></li>
+            <li><a href="{% url 'about_me' %}">ABOUT ME</a></li>
+            <li><a href="{% url 'contact' %}">CONTACT</a></li>
+        </ul>
 
         <div class=intro>
-            <h1> HÍCARO </h2>
+            <h1> {% block secondary_title %} HÍCARO {% endblock secondary_title %} </h1>
         </div>
 
         <hr>
