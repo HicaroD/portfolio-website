@@ -1,0 +1,11 @@
+.personalImage {
+    border-radius: 50%;
+    width: auto;
+    height: 200px;
+}
+
+.about-me-body {
+    display: inline-block;
+    width: 45%;
+    color: white;
+}
