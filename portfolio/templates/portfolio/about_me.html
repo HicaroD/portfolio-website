@@ -1,3 +1,15 @@
 {% extends 'portfolio/base.html' %}
+{% load static %}
 
 {% block title %} About Me {% endblock title %}
+
+{% block content %}
+
+<div class="about-me-body">
+
+<img class="personalImage" src="{% static 'portfolio/images/75737377.jpg' %}">
+<p> Hello, my name is Hícaro and I am a backend software developer looking for my first job opportunity. I live in Brazil, but one of my dreams is to live in another country, such as Canada or Portugal. I'm in my first year towards a bachelor's in Computer Science at Universidade Federal de Alagoas (UFAL). </p>
+
+</div>
+
+{% endblock content %}
