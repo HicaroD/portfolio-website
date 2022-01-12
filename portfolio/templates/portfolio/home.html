@@ -7,7 +7,7 @@
 {% for article in articles %}
 
 <div class="article">
-    <p> [{{article.posted|date:"Y, F d"}}] <a href="{% url 'article' article.pk %}"> {{article.title}} </a></p>
+    <p> [{{article.posted|date:"Y, F d"}}] <a href="{% url 'article' article.slug %}"> {{article.title}} </a></p>
 </div>
 
 {% endfor %}
