@@ -1,4 +1,4 @@
 # Portfolio website
-A portfolio website created with Django web framework. This project is a work in progress, I still need to deploy on Heroku, so everyone can access it.
+A portfolio website created with Django web framework. Click [here](https://websiteportfolio13.herokuapp.com/)
 
-![websiteState](Images/website_front.png)
+![websiteState](Images/new_home_page.png)
