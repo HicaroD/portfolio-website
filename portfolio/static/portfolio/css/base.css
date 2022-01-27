@@ -34,6 +34,7 @@ a {
 
 .socials, .navbar ul {
     list-style-type: none;
+    padding: 0px;
 }
 
 .socials li {
@@ -50,10 +51,9 @@ hr {
     width: 45%;
 }
 
-.socials ul, .article p {
+.socials ul {
     text-align: left;
     margin-left: auto;
     margin-right: auto;
     width: 45%;
-    padding: 0px;
 }
