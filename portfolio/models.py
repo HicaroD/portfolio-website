@@ -1,18 +1,18 @@
 from django.db import models
 from django.urls import reverse
 
-class Article(models.Model):
+class Project(models.Model):
     title = models.CharField(max_length=50)
-    posted = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    body = models.TextField()
-    slug = models.SlugField(max_length=50, null=True, unique=True)
+    description = models.TextField()
+    technologies = models.TextField(null=True)   # List of technologies separated by comma
+    project_link = models.TextField(null=True)
+    rating = models.SmallIntegerField() # For ordering
 
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse("article", kwargs={'slug': self.slug})
+    def get_technologies(self):
+        return self.technologies.split(",")
 
     class Meta():
-        ordering = ['-posted']
+        ordering = ['-rating']
