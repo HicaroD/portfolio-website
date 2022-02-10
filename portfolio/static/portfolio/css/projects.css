@@ -1,0 +1,14 @@
+.project-list {
+	display: grid;
+	width: 45%;
+	background-color: #222222;
+	box-shadow: 5px 5px 10px;
+	margin: 0 auto;
+}
+
+.tech-icons img {
+	width: 30px;
+	height: auto;
+	float: left;
+	padding: 5px;
+}

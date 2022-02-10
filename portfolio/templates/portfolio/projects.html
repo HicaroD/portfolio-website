@@ -1,0 +1,19 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %} Projects {% endblock %}
+
+{% block content %}
+<div class="project-list">
+	<div class="project">
+		<div class="info">
+			<h2 id="name">tChat</h2>
+			<p id="description"><i>A powerful user interface for Twitch chat</i></p>
+		</div>
+		<div class="tech-icons">
+			<img src="{% static 'portfolio/images/tech_logo/rust.png' %}" alt="">
+			<img src="{% static 'portfolio/images/tech_logo/python.svg' %}" alt="">
+		</div>
+	</div>
+</div>
+{% endblock %}
