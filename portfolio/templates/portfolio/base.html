@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{% static 'portfolio/css/base.css' %}">
         <link rel="stylesheet" href="{% static 'portfolio/css/about_me.css' %}">
         <link rel="stylesheet" href="{% static 'portfolio/css/contact.css' %}">
+        <link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title> {% block title %} Hícaro {% endblock title %} </title>
     </head>
@@ -17,6 +18,7 @@
         <ul>
             <li><a href="{% url 'about_me' %}">ABOUT ME</a></li>
             <li><a href="{% url 'contact' %}">CONTACT</a></li>
+            <li><a href="{% url 'projects' %}">PROJECTS</a></li>
             <li><a target="_blank" href="https://drive.google.com/file/d/14mbB8xLdLNKlYagvec8sephZWO5ShqY9/view?usp=sharing">RESUME</a></li>
         </ul>
 
