@@ -1,4 +1,5 @@
 venv
 website_portfolio/.env
 website_portfolio/__pycache__
+portfolio/__pycache__
 notes.txt
