@@ -4,16 +4,33 @@
 {% block title %} Projects {% endblock %}
 
 {% block content %}
-<div class="project-list">
+{% for project in projects %}
+<a class="project-link" href="{{ project.project_link }}">
 	<div class="project">
 		<div class="info">
-			<h2 id="name">PROJECT_NAME</h2>
-			<p id="description"><i>PROJECT DESCRIPTION</i></p>
+			<h2 id="name">{{ project.title }}</h2>
+			<p id="description"><i>{{ project.description }}</i></p>
 		</div>
-
 		<div class="tech-icons">
-			<img src="{% static 'portfolio/images/tech_logo/rust.png' %}" alt="">
+			{% for tech in project.get_technologies %}
+				{% if tech == "rust" %}	
+				<img src="{% static 'portfolio/images/tech_logo/rust.png' %}" alt="">
+				{% endif %}	
+
+				{% if tech == "python" %}	
+				<img src="{% static 'portfolio/images/tech_logo/python.png' %}" alt="">
+				{% endif %}	
+
+				{% if tech == "go" %}	
+				<img src="{% static 'portfolio/images/tech_logo/go.png' %}" alt="">
+				{% endif %}	
+
+				{% if tech == "django" %}	
+				<img src="{% static 'portfolio/images/tech_logo/django.png' %}" alt="">
+				{% endif %}	
+			{% endfor %}
 		</div>
 	</div>
-</div>
+</a>
+{% endfor %}
 {% endblock %}
