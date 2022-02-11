@@ -11,4 +11,5 @@ def contact(request):
     return render(request, "portfolio/contact.html")
 
 def projects(request):
-    return render(request, "portfolio/projects.html")
+    projects = Project.objects.all()
+    return render(request, "portfolio/projects.html", {'projects': projects})
