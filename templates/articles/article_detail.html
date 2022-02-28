@@ -1,0 +1,14 @@
+{% extends 'portfolio/base.html' %}
+
+{% block secondary_title %} {{ article.title }} {% endblock %}
+
+{% block article_info %}
+<ul class="article-info">
+    <li id="created_at"> <i class="fa fa-calendar" aria-hidden="true"></i> {{ article.created_at|date:"M, Y"}} </li>
+    <li id="updated_at"> <i class="fa fa-pencil" aria-hidden="true"></i> {{ article.updated_at|date:"M, Y" }} </li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<p class="article_body">{{ article.body }}</p>
+{% endblock %}
