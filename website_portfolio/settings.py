@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio.apps.PortfolioConfig',
-    'markdownify.apps.MarkdownifyConfig',
-    'articles.apps.ArticlesConfig',
 ]
 
 MIDDLEWARE = [
@@ -130,14 +128,6 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-MARKDOWNIFY = {
-  "default": {
-     "WHITELIST_TAGS": ["a", "p", "h1", "br", "ul", "li", "h1"
-                        "h2", "h3", "img", "code", "pre"]
-  },
-}
 
 # Activate Django-Heroku.
 import django_heroku
