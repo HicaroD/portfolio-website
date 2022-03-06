@@ -1,4 +1,4 @@
-venv
+env/
 website_portfolio/.env
 website_portfolio/__pycache__
 articles/__pycache__
