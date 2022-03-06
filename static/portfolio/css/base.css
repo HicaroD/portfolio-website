@@ -4,7 +4,6 @@
 
 body {
     background-color: #181A1B;
-    text-align: center;
 }
 
 a {
@@ -30,6 +29,11 @@ a {
 
 .intro {
     color: white;
+    text-align: center;
+}
+
+.navbar ul {
+    text-align: center;
 }
 
 .socials, .navbar ul {
