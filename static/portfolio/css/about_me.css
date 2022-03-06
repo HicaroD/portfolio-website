@@ -1,7 +1,11 @@
-.personalImage {
+.personal-image img {
     border-radius: 50%;
     width: auto;
     height: 200px;
+}
+
+.personal-image {
+    text-align: center;
 }
 
 .about-me-body {
