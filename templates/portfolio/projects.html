@@ -55,7 +55,11 @@
 
 				{% if tech == "heroku" %}	
 				<img src="{% static 'portfolio/images/tech_logo/heroku.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
+
+                {% if tech == "javascript" %}
+				<img src="{% static 'portfolio/images/tech_logo/javascript.png' %}" alt="">
+				{% endif %}
 			{% endfor %}
 		</div>
 	</div>
