@@ -1,0 +1,31 @@
+{% extends 'articles/index.html' %}
+
+{% block content %}
+
+<div class="article">
+    <div style="text-align: center;">
+        <button id="atom">Atom</button>
+        <button id="github">GitHub</button>
+        <button id="monokai">Monokai</button>
+        <button id="stack-overflow">Stack Overflow</button>
+        <button id="nord">Nord</button>
+        <button id="gruvbox">Gruvbox</button>
+    </div>
+
+    <h2 id="article-name">{{article.name}}</h2>
+
+    <div class="article-dates">
+        <ul>
+            <li><i class="fa-solid fa-calendar"></i><span id="created_at"> {{article.created_at|date:'D, M, y'}}</span></li>
+            <li><i class="fa-solid fa-pen"></i><span id="updated_at"> {{article.updated_at|date:'D, M, y'}}</span></li>
+        </ul>
+    </div>
+
+    <div class="article-body">
+        {% autoescape off %}
+            {{object.body}}
+        {% endautoescape %}
+    </div>
+</div>
+
+{% endblock %}
