@@ -23,7 +23,6 @@
 }
 
 .name {
-    align-self: center;
     width: 70%;
 }
 
@@ -37,10 +36,6 @@
     width: 70%;
 }
 
-.article-body code {
-    background-color: #1a1a1a;
-}
-
 #article-name {
     text-align: center;
 }
@@ -50,6 +45,11 @@
     justify-content: space-evenly;
     list-style: none;
 }
+
 .article-body h2, .article-body h3 {
     border-bottom: solid 2px white;
+}
+
+#my-name {
+    border-bottom: solid 2px #FFC93C;
 }
