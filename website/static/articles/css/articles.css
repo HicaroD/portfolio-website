@@ -53,3 +53,7 @@
 .article-body h2, .article-body h3 {
     border-bottom: solid 2px white;
 }
+
+#name {
+    border-bottom: solid 2px #FFC93C;
+}
