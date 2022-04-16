@@ -3,4 +3,5 @@ website_portfolio/.env
 website_portfolio/__pycache__
 articles/__pycache__
 portfolio/__pycache__
+portfolio/migrations/__pycache__
 notes.txt
