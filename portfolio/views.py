@@ -1,4 +1,6 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from .models import Project
 
 def index(request):
@@ -10,6 +12,6 @@ def about_me(request):
 def contact(request):
     return render(request, "portfolio/contact.html")
 
-def projects(request):
-    projects = Project.objects.all()
-    return render(request, "portfolio/projects.html", {'projects': projects})
+class Projects(ListView):
+    model = Project
+    template_name = "portfolio/projects.html"
