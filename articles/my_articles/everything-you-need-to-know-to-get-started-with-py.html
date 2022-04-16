@@ -1,0 +1,294 @@
+<p>First of all, all the concepts that I&#39;m going to show you are almost the same for basically any modern programming language. That&#39;s because all programming languages have variables and loops, for example. It is more like programming logic than a &quot;Python tutorial&quot;. I hope you enjoy and carry that knowledge throughout your whole career.</p>
+<p>In this article, I&#39;ll explain <strong>everything you need to know to get started with Python</strong>.</p>
+<h2 id="summary">Summary</h2>
+<ol>
+<li><a href="#variables-and-data-types">Variables and data types</a></li>
+<li><a href="#conditionals">Conditionals</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#contributions">Contributions</a></li>
+</ol>
+<h3 id="hello-world">Hello world</h3>
+<p>The simplest program the we could write is the &quot;Hello world&quot; program.</p>
+<pre><code class="language-python"># file: hello.py
+
+print(&quot;Hello, world!&quot;)
+</code></pre>
+<p>The <code>print()</code> will output to the screen whatever is inside of the parenthesis and between quotes. Above <code>print()</code> we have a <code>#</code> followed by something, everytime we see this <code>#</code> in Python, we say it is a comment. Every comment is ignored by the Python interpreter.</p>
+<p>To execute this code, it will depend on the operating system you are using. If you are using Linux, you can type in the command-line <code>python hello.py</code>.</p>
+<h3 id="variables-and-data-types">Variables and data types</h3>
+<p>Imagine a situation where you want to describe a person using Python. For example, you want to print the name, age, hobbies and much more. For that, we could write the code below:</p>
+<pre><code class="language-python">print(&quot;Joseph is a boy who likes Python&quot;)
+print(&quot;Joseph is 18 years-old&quot;)
+print(&quot;Joseph likes to play video games&quot;)
+print(&quot;Joseph is a Computer Science student&quot;)
+</code></pre>
+<p>If you run this code, everything just works fine. But, there is room for improvements. And if we could store the name of Joseph somewhere, so we can reuse it later without needing to type &quot;Joseph&quot; everytime, is there any way to do that? YEAH! That&#39;s why variables exist.</p>
+<p>Variables are like placeholders for values, just like in Math.</p>
+<pre><code class="language-python">name = &quot;Joseph&quot; # That&#39;s how we declare a variable in Python
+
+print(name, &quot;is a boy who likes Python&quot;)
+print(name, &quot;is 18 years-old&quot;)
+print(name, &quot;likes to play video games&quot;)
+print(name, &quot;is a Computer Science student&quot;)
+</code></pre>
+<p>Now, we can use variable <code>name</code> anywhere. There is no need to write by hand the name &quot;Joseph&quot;.</p>
+<p>See more examples on variables:</p>
+<pre><code class="language-python">age = 18              # int (integer)
+wallet = 18.50        # float (floating point numbers)
+name = &quot;Joseph&quot;       # String (Collection of characters)
+can_vote = True       # Boolean (Boolean can be two things: True or False)
+imaginary_number = 1j # Complex 
+</code></pre>
+<h3 id="conditionals">Conditionals</h3>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--XVBVxzKc--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn-amgoo.nitrocdn.com/qJvQlgGQEOwNXyhUqNwiAWOQgCDvoMdJ/assets/static/optimized/rev-c714b43/wp-content/uploads/2016/07/using-VBA-IF-statement-code-in-excel.png" alt="conditionals-example"></p>
+<p>Sometimes you want to make decisions in your program based on some kind of situation. In that case, you want to use conditionals statements, like <code>if</code>, <code>else if</code> and <code>else</code>.</p>
+<p>For the sake of a better understanding, let&#39;s write a program that receives an integer representing the <code>age</code> and check <code>if</code> you can vote based on your code>age</code>. The most common voting age at Brazil is 18. So we need to check if the received integer is greater than or equal to 18.</p>
+<pre><code class="language-python">age = 19
+
+if age &gt;= 18:
+    print(&quot;You can vote!&quot;)
+
+else:
+    print(&quot;You can not vote!&quot;)
+</code></pre>
+<p>The line below <code>if age &gt;= 18</code> will just be executed if the condidition <code>age &gt;= 18</code> is True. In this example above, the program will print out to the screen &quot;You can vote!&quot; because age = 19 and 19 is greater than 18, which means the <code>if</code> is True, that&#39;s why it is gonna be executed instead of <code>else</code>. <code>else</code> is just executed when the conditions above him are false. If age was equal to 17, <code>else</code> would be executed because <code>age &gt;= 18</code> is False. </p>
+<p>Sometimes you want to check more conditions. That&#39;s why we use <code>elif</code>. Let&#39;s write a program to check your grade.</p>
+<pre><code class="language-python">grade = &quot;A&quot;
+
+if grade == &quot;A&quot;:
+    print(&quot;Awesome!&quot;)
+
+elif grade == &quot;B&quot;:
+    print(&quot;Good&quot;)
+
+elif grade == &quot;C&quot;:
+    print(&quot;Not so good&quot;)
+
+else:
+    print(&quot;Bad&quot;)
+</code></pre>
+<p>Using <code>elif</code>, we can check more than one condition and we use <code>else</code> without a condition because it will only be executed if and only if every condition above is false. In this example, the program will print out &quot;Awesome!&quot; because the first condition <code>if grade == &quot;A&quot;</code> is True and the program will just finish after it.</p>
+<p>Always remember this structure below:</p>
+<pre><code class="language-python">if something_is_true:
+    # Execute this
+
+elif something_is_true:
+    # Execute this
+
+else:
+    # Execute this if and only if every condition above is false
+</code></pre>
+<p>That is everything you need to understand about conditionals for now. I recommend you to start writing simple programs and articulate your logic using <code>if</code>, <code>elif</code> and <code>else</code> when you need it. If you want to solve some programming puzzles, try this website <a href="https://www.beecrowd.com.br/judge/en/login">here</a>.</p>
+<h3 id="lists">Lists</h3>
+<p>We already learned about variables and conditional statements, so far so good. Now it is time to learn about lists.</p>
+<p>Imagine a situation where you want to store a lot of different colors somewhere. The first thing you might do is the following:</p>
+<pre><code class="language-python">first_color = &quot;Red&quot;
+second_color = &quot;Green&quot;
+third_color = &quot;Blue&quot;
+</code></pre>
+<p>You could do that, but try to imagine how terrible would be if you want to store 10, 20 or 30 differents colors. Is there a way to create some sorta of list where I can insert and access it later in my program? Yep, Python has <strong>lists</strong>. </p>
+<ul>
+<li><p>What is a list?</p>
+<p>List are data structures used to store data sequentially.</p>
+<pre><code class="language-python"># That&#39;s how you declare an empty list
+my_list = []
+
+# Declaring and defining the elements of a list
+colors = [&quot;Red&quot;, &quot;Green&quot;, &quot;Blue&quot;]
+</code></pre>
+</li>
+<li><p><strong>Operations in list</strong></p>
+<p>I&#39;m going to be explaining a few common operations that you might want to perform using lists. Of course, there are a lot of them and you can google as you need it. </p>
+<ul>
+<li><p>Accessing elements using indices</p>
+<pre><code class="language-python">colors = [&quot;Red&quot;, &quot;Green&quot;, &quot;Blue&quot;] # Declaring and defining the elements of a list
+print(colors[0]) # Output: Red
+print(colors[1]) # Output: Blue
+</code></pre>
+<p>We can access an element in the list using list[] notation. The first element always starts at the index 0, that&#39;s why when we use <code>colors[0]</code> we get &quot;Red&quot; as the output, why? it&#39;s the first element of the list.</p>
+</li>
+<li><p>Insert elements at the end</p>
+<p>Instead of writing the data directly in the list, we can insert elements during the execution of the program using <code>append()</code>.</p>
+<pre><code class="language-python">colors = [] # Empty list
+colors.append(&quot;Red&quot;) # colors = [&quot;Red&quot;]
+colors.append(&quot;Blue&quot;) # colors = [&quot;Red&quot;, &quot;Blue&quot;]
+</code></pre>
+</li>
+<li><p>Find the size of the list</p>
+<pre><code>numbers = [2, 3, -1, 20]
+size = len(numbers) # size = 4
+</code></pre>
+</li>
+<li><p>Delete some element and last element</p>
+<pre><code class="language-python">numbers = [2, 3, -1, 20]
+
+# Deleting element from the end of the array
+numbers.pop()  # numbers = [2, 3, -1]
+
+# Deleting element at the index 1
+numbers.pop(1) # numbers = [2, -1]
+</code></pre>
+</li>
+<li><p>Remove ONLY first occurence of a particular element</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;apple&quot;]
+fruits.remove(&quot;apple&quot;) # fruits = [&quot;banana&quot;, &quot;cherry&quot;, &quot;apple&quot;]
+</code></pre>
+</li>
+<li><p>Remove all elements of a list</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;apple&quot;]
+fruits.clear() # fruits = []
+</code></pre>
+</li>
+<li><p>Sort the list</p>
+<pre><code class="language-python">numbers = [2, 3, -1, 20]
+numbers.sort()                 # numbers = [-1, 2, 3, 20]
+numbers.sort(reverse = True)   # numbers = [20, 3, 2, -1]
+</code></pre>
+<p>If you want to store the sorted list in another list, you might want to use <code>sorted()</code> rather than <code>sort()</code>.</p>
+<pre><code class="language-python">numbers = [2, 3, -1, 20]
+sorted_numbers = sorted(numbers) # sorted_numbers = [-1, 2, 3, 20]
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="strings">Strings</h3>
+<p>Now it is time to learn more about strings. More? Did we already learn something about strings? Yes, we are dealing with strings since the beginning of this articles.</p>
+<ul>
+<li><p><strong>What is a string?</strong></p>
+<p>String is a sequence of <a href="https://en.wikipedia.org/wiki/Unicode">Unicode characters</a>. Basically, in Python, anything between quotes is a string, for example &quot;This is a string&quot; is a string because it is between quotes. </p>
+<p>You can think that a string is a list of characters. We can access any character in the string using indexing.</p>
+<pre><code class="language-python">fact = &quot;Python is awesome!&quot;
+print(fact)       # &quot;Python is awesome!&quot;
+print(type(fact)) # &lt;class &#39;str&#39;&gt; (&#39;str&#39; means &#39;string&#39;)
+print(fact[0])    # P
+print(fact[-1])   # !
+</code></pre>
+<p><em>You can use negative numbers to get characters from the end, -1 will return the last character or element of the list</em></p>
+</li>
+<li><p><strong>Operations with string</strong></p>
+<ul>
+<li><p>Capitalize string</p>
+<pre><code class="language-python">country = &quot;brazil&quot;
+country = country.capitalize() # Brazil
+</code></pre>
+</li>
+<li><p>String to uppercase or lowercase</p>
+<pre><code class="language-python">country = &quot;brazil&quot;
+country = country.upper() # BRAZIL
+country = country.lower() # brazil
+</code></pre>
+</li>
+<li><p>Check if string ends with certain characters or another string</p>
+<p>This method returns a boolean (True or False), so you can easily use it a <code>if</code> condition.</p>
+<pre><code class="language-python">fact = &quot;Python is awesome!&quot;
+
+if fact.endswith(&quot;awesome!&quot;):
+    print(&quot;Yes, it ends with &#39;awesome!&#39;&quot;)
+</code></pre>
+</li>
+<li><p>Replace some character / substring by another character / substring</p>
+<pre><code class="language-python">fact = &quot;Python is awesome!&quot;
+
+if fact.endswith(&quot;awesome!&quot;):
+    fact.replace(&quot;awesome&quot;, &quot;terrific&quot;) # Now, fact is &quot;Python is terrific!&quot;
+</code></pre>
+</li>
+<li><p>Transform string into a list</p>
+<p>You can separate a string into a list based on certain character or substring.</p>
+<pre><code class="language-python">names = &quot;Jack, Zoe, Mike, John, Gabriel&quot;
+names = names.split(&quot;, &quot;) # [&quot;Jack&quot;, &quot;Zoe&quot;, &quot;Mike&quot;, &quot;John&quot;, &quot;Gabriel&quot;]
+</code></pre>
+<p>So, basically, everytime we see &quot;, &quot; in the string, we&#39;re gonna split it. By default, <code>split()</code> split the string using the space.</p>
+</li>
+<li><p>Check if string&#39;s characters are all lowercase / uppercase</p>
+<pre><code class="language-python">country = &quot;usa&quot;
+if country.islower():
+    country = country.upper() # USA
+
+if country.isupper():
+   country = country.lower() # usa
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dictionaries">Dictionaries</h3>
+<p>Imagine the situation where if you want store informations about yourself in your program, such as name, age, phone number and more. You can think about using a list for that.</p>
+<pre><code class="language-python">info = [&quot;Hicaro&quot;, 18, 232838131912-1]
+
+print(&quot;My name is&quot;, info[0])
+</code></pre>
+<p>You could that easily, but maybe it is not the best option. If your code base was too big, you would have scroll up and down everytime you want to know what is stored in the index 0 of the <code>info</code> list. It is bad design. What should I do that? Basically, when you want to map something to another thing, we&#39;re gonna be using a Dictionary.</p>
+<ul>
+<li><p><strong>What is a dictionary?</strong></p>
+<p>A dictionary is a data structure based on key-value pairs. We always have a key that we use to access some specific value in memory.</p>
+<pre><code class="language-python">info = {} # Empty dictionary
+info[&quot;Name&quot;] = &quot;Hicaro&quot;
+info[&quot;Age&quot;] = 18
+info[&quot;Tel&quot;] = 232838131912-1
+
+if info[&quot;Name&quot;] == &quot;Hicaro&quot;:
+    print(&quot;My name is&quot;, info[&quot;Name&quot;])
+</code></pre>
+<p>Instead of inserting each key-value pair one by one like I did above, you could create the dictionary directly inside the <code>{}</code>.</p>
+<pre><code class="language-python">info = {&quot;Name&quot;: &quot;Hicaro&quot;, &quot;Age&quot;: 18, &quot;Tel&quot;: 232838131912-1}
+
+if info[&quot;Name&quot;] == &quot;Hicaro&quot;:
+    print(&quot;My name is&quot;, info[&quot;Name&quot;])
+</code></pre>
+<p>The key doesn&#39;t need to be a string, you can use numbers as always, but <a href="https://stackoverflow.com/questions/7257588/why-cant-i-use-a-list-as-a-dict-key-in-python">you can not use lists as dict key</a>.</p>
+<p>Now you have something way more sofisticated to store data and efficient in terms of time for accessing data. Now, we don&#39;t have the problem of not knowing about what the index because the &quot;index&quot; will be basically the key that we choose. Pretty sure <code>info[&quot;Name&quot;]</code> is more readable than <code>info[0]</code>.</p>
+</li>
+</ul>
+<h3 id="loops">Loops</h3>
+<p>Let&#39;s bring a lot of concepts together. Imagine you have a list of friends&#39;s name and you want to print &quot;Hello&quot; to all of them. How would do that? You could make a print statement for each one of them.</p>
+<pre><code class="language-python">friends_name = [&quot;Laurie&quot;, &quot;Erlich&quot;, &quot;Gilfoyle&quot;, &quot;Richard&quot;, &quot;Monica&quot;]
+print(&quot;Hello, &quot;, friends_name[0])
+print(&quot;Hello, &quot;, friends_name[1])
+print(&quot;Hello, &quot;, friends_name[2])
+print(&quot;Hello, &quot;, friends_name[3])
+print(&quot;Hello, &quot;, friends_name[4])
+</code></pre>
+<p>It is kinda of exhaustive and repetitive. Probably everytime you&#39;re doing something that is so much repetitive in programming, there will be a better solution for that. In fact, there is one. We just want to repeat basically the same <code>print()</code> for each friend repetitively, that&#39;s why we use a loop. We have two options for looping (<code>for</code> and <code>while</code>). We use <code>for</code> when we want to iterate over a sequence (it is not a rule, you can use anything you want) and <code>while</code> when we want to repetitively do a thing while something is true.</p>
+<pre><code class="language-python">friends_name = [&quot;Laurie&quot;, &quot;Erlich&quot;, &quot;Gilfoyle&quot;, &quot;Richard&quot;, &quot;Monica&quot;]
+
+for name in friends_name:
+    print(&quot;Hello, &quot;, name)
+</code></pre>
+<p>We can easily iterate over a sequence using <code>for</code> because we can use <code>in</code>. <code>name</code> is basically a variable that represents an element of the list, starting from the first to the last element. This loop will stop when we iterate over the whole list.</p>
+<p>If you want know more about loops, <a href="https://www.w3schools.com/python/python_while_loops.asp">W3Schools articles about loops</a> certainly do a better job explaining to you these concepts.</p>
+<h3 id="functions">Functions</h3>
+<p>Now we have functions. Functions are blocks of code that we can use to execute in just one line of code. For example:</p>
+<pre><code class="language-python">def my_function_name():
+    print(&quot;Printing something from function&quot;)
+
+my_function_name() # Printing something from function
+</code></pre>
+<p>In the code above, I create a function using <code>def</code>, after that I gave a name for my function (<code>my_function_name</code>) so I can access it (just like we do with variables and list), after that I use <code>()</code> (I&#39;ll explain it later). Below the definition, I defined the body of the function, the block of code that we want to execute. In the last of code, we are calling the function using <code>my_function_name()</code> and then it will execute the function. See more examples:</p>
+<pre><code class="language-python">def sum(number):
+    print(number + 3)
+
+sum(2) # 5
+</code></pre>
+<p>Notice that I put a parameter inside of the parentheses, that&#39;s because when I call the function in the last line of code, I put 2 there, so the parameter <code>number</code> will equal to 2 and then we will print <code>2 + 3</code> which is 5.</p>
+<p>And if you try execute this function inside a variable?</p>
+<pre><code class="language-python">my_sum = sum(2) # None
+</code></pre>
+<p>We&#39;ll get <code>None</code> and not 5, why? Because we are not returning anything from the function, if you want to <code>return</code> the sum and store it in the variable <code>my_sum</code>, we should use the <code>return</code> keyword. </p>
+<pre><code class="language-python">def sum(number):
+    return number + 3
+
+my_sum = sum(2) # 5
+</code></pre>
+<h2 id="references">References</h2>
+<p><a href="https://docs.python.org/3/tutorial/">Official tutorial from Python documentation</a>
+<a href="https://www.w3schools.com/python/default.asp">Python tutorial by &quot;W3Schools&quot;</a></p>
+<h2 id="contributions">Contributions</h2>
+<p>If you have something to suggest, please leave it in the comments below.</p>
+<p>Don&#39;t forget to start doing projects and learn the language as you build. At the end of the day, you don&#39;t need to know all this functions and methods, you need to know where to find it and use it as you need. Good luck and thank you for the attention, I hope you learned something new with this article, see ya next time :heart:</p>

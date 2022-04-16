@@ -1,0 +1,93 @@
+<p>This article is the first article of the &quot;Writing beautiful and Idiomatic Python code&quot; serie. I&#39;m gonna talking about idiomatic ways for looping using Python.</p>
+<p>Obs.: <em>Code quality / design is subjective, feel free to disagree and comment down bellow different approaches and alternatives ways to do the same thing</em></p>
+<h2 id="summary">Summary</h2>
+<ol>
+<li><a href="#loop-over-a-numeric-interval">Loop over a numeric interval</a></li>
+<li><a href="#loop-over-a-collection">Loop over a collection</a></li>
+<li><a href="#loop-over-a-collection-and-indices">Loop over a collection and indices</a></li>
+<li><a href="#loop-over-a-collection-in-reverse-order">Loop over a collection in reverse order</a></li>
+<li><a href="#loop-over-two-collection-at-the-same-time">Loop over two collection at the same time</a></li>
+<li><a href="#loop-over-a-list-in-orderly-fashion">Loop over a list in orderly fashion</a></li>
+</ol>
+<h3 id="loop-over-a-numeric-interval"><strong>Loop over a numeric interval</strong></h3>
+<p>Don&#39;t:</p>
+<pre><code class="language-python">for i in [1, 2, 3, 4, 5]:
+    print(i ** 2)
+</code></pre>
+<p>Do:</p>
+<pre><code class="language-python">for i in range(6):
+    print(i ** 2)
+</code></pre>
+<h3 id="loop-over-a-collection"><strong>Loop over a collection</strong></h3>
+<p>Don&#39;t:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+for i in range(len(collection)):
+    print(colors[i])
+</code></pre>
+<p>Do:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+for color in colors:
+    print(color)
+</code></pre>
+<h3 id="loop-over-a-collection-and-indices"><strong>Loop over a collection and indices</strong></h3>
+<p>Don&#39;t:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+for i in range(len(collection)):
+    print(i, &quot;---&gt;&quot;, colors[i])
+</code></pre>
+<p>Do:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+for index, color in enumerate(colors):
+    print(index, &quot;---&gt;&quot;, color)
+</code></pre>
+<h3 id="loop-over-a-collection-in-reverse-order"><strong>Loop over a collection in reverse order</strong></h3>
+<p>Don&#39;t:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+for i in range(len(colors) -1, -1, -1):
+    print(colors[i])
+</code></pre>
+<p>Do:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+for color in reversed(colors):
+    print(color)
+</code></pre>
+<h3 id="loop-over-two-collection-at-the-same-time"><strong>Loop over two collection at the same time</strong></h3>
+<p>Don&#39;t:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+names = [&quot;Hicaro&quot;, &quot;Julia&quot;, &quot;Fred&quot;, &quot;Jake&quot;, &quot;Mike&quot;]
+
+n = min(len(colors), len(names))
+
+for i in range(n):
+    print(colors[i], names[i])
+</code></pre>
+<p>Do:</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+names = [&quot;Hicaro&quot;, &quot;Julia&quot;, &quot;Fred&quot;, &quot;Jake&quot;, &quot;Mike&quot;]
+
+for color, name in zip(colors, names):
+    print(color, name)
+</code></pre>
+<p>An alternative way is to use <code>izip()</code> for gigantic lists (appropriate option in terms of performance&#39;s tradeoffs)</p>
+<pre><code class="language-python">colors = [&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;]
+names = [&quot;Hicaro&quot;, &quot;Julia&quot;, &quot;Fred&quot;, &quot;Jake&quot;, &quot;Mike&quot;]
+
+for color, name in izip(colors, names):
+    print(color, name)
+</code></pre>
+<h3 id="loop-over-a-list-in-orderly-fashion"><strong>Loop over a list in orderly fashion</strong></h3>
+<p>Do:</p>
+<pre><code class="language-python">names = [&quot;Hicaro&quot;, &quot;Julia&quot;, &quot;Fred&quot;, &quot;Jake&quot;, &quot;Mike&quot;]
+for name in sorted(names):
+    print(name)
+</code></pre>
+<p>Unless you want the list sorted before the loop, you can do this above. </p>
+<h3 id="loop-over-a-dictionary"><strong>Loop over a dictionary</strong></h3>
+<p>Do:</p>
+<pre><code class="language-python">info = {&quot;Name&quot;: &quot;Hicaro&quot;, &quot;Age&quot;: 18, &quot;Tel&quot;: 2319321931-1}
+
+for key, value in info.items():
+    print(f&quot;{key} --&gt; {value}&quot;)
+</code></pre>
+<h2 id="references">References</h2>
+<p><a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></p>

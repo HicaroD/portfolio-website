@@ -1,0 +1,129 @@
+<p>In this article, I&#39;m gonna be discussing the basics about pointers which is a major concept and feature in C and C++.</p>
+<h2 id="summary">Summary</h2>
+<ol>
+<li><a href="#what-is-a-pointer">What is a pointer?</a></li>
+<li><a href="#pointers-in-the-context-of-arrays">Pointers in the context of arrays</a></li>
+<li><a href="#pointers-in-the-context-of-linked-list">Pointers in the context of linked list</a></li>
+<li><a href="#references">References</a></li>
+</ol>
+<h3 id="what-is-a-pointer">What is a pointer?</h3>
+<p>Pointer is a data type that stores a memory address.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    int number = 12; 
+    int* ptr = &amp;number;
+    int number_from_pointer = *ptr;
+    return 0;
+}
+</code></pre>
+<p>Inside the function <code>main</code>, I&#39;m creating a integer called <code>number</code> with the value <code>12</code>. This variable <code>number</code> has its value stored somewhere in the memory. How do I see this memory address? For that, in the second line of the <code>main</code> function, we create a pointer with <code>*</code> after the data type. In this pointer, we store the memory address of <code>number</code>. Your memory address might be something like that <code>0x7ffc546ae020</code> (You can print it using <code>printf(&quot;%p\n&quot;, ptr)</code>), but this hexadecimal number is gonna be dependent on where the memory for the variable was allocated.</p>
+<p>In the third line, we are doing something interesting. With pointers, we may not have the data on our hands, but we have the memory address for it, so we can derefence the pointer, which means access the value using the memory location stored in our pointer. To derefence a pointer, we use <code>*</code> in the front of the pointer. It might be confuse at first because <code>*</code> is used for creating and dereferencing pointers, but you get used to it.</p>
+<h3 id="pointers-in-the-context-of-arrays">Pointers in the context of arrays</h3>
+<p>Now we have a basic understanding of pointers and memory addresses, we can look more deeply into arrays. Arrays are contiguous blocks of memory that we use for storing multiple things of the same type together. </p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    char grades[] = {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;F&#39;}; 
+    return 0;
+}
+</code></pre>
+<p>You can prove that all elements are all close to each other by running a loop in the memory addresses of each element in the array and see the similitaries all of them.</p>
+<pre><code class="language-c">// example.c
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    char grades[] = {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;F&#39;}; 
+
+    for(int i = 0; i &lt; 5; i++){
+        printf(&quot;%p\n&quot;, &amp;grades[i]);
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Here is the output of that program above:</p>
+<pre><code class="language-bash">$ gcc example.c &amp;&amp; ./a.out
+
+0x7ffc51a77080
+0x7ffc51a77084
+0x7ffc51a77088
+0x7ffc51a7708c
+0x7ffc51a77090
+</code></pre>
+<p>Look how similar they all are, except for the last digits of hexadecimal number. They are all very close to each other in memory. It is an array after all, right?</p>
+<p>As I said, an array is just a contiguous block of memory. How do we access this block? In C, arrays are pointers as well, basically array is considered to be the same thing as a pointer to the first element in the array. I can prove it!</p>
+<p>We learned how to derefence a pointer using <code>*</code>. Let&#39;s try to do the same thing in an array and see what happens.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    char grades[] = {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;F&#39;}; 
+
+    char grade = *grades; // Dereferencing an array
+
+    printf(&quot;%c\n&quot;, grade);
+    return 0;
+}
+</code></pre>
+<p>The output will be <code>A</code> which happens to be the first element in the array. We can also create an alternative pointer to an array.</p>
+<pre><code class="language-c">include &lt;stdio.h&gt;
+
+int main(){
+    char grades[] = {&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;F&#39;}; 
+    char* ptr = grades;
+
+    printf(&quot;%c\n&quot;, ptr[1]);
+    return 0;
+}
+</code></pre>
+<p>The output will be <code>B</code> because it is the second element of the <code>grades</code> array (Arrays indices starts at 0).</p>
+<h3 id="pointers-in-the-context-of-linked-list">Pointers in the context of linked list</h3>
+<p>Before we start, I want to say that there are plenty of good implementations of linked list that you can look at, you shouldn&#39;t be using my implementation to solve real problems. **IT IS ONLY FOR EDUCATIONAL PURPOSES. **</p>
+<p>From Wikipedia, <em>a linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence</em>.</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200922124319/Singly-Linked-List1.png" alt="linkedList"></p>
+<p>Using the Wikipedia explanation about Linked List, we see that &quot;each element points to the next&quot;. If we want to represent this structure in C, here is what we do:</p>
+<pre><code class="language-c">struct Node {
+    int data;
+    struct Node* next;
+};
+</code></pre>
+<p>Linked list has nodes. Each node stores the data you want and the pointer to the next Node (if there is another node, otherwise the pointer will be <code>NULL</code>). That&#39;s how we implement the core of a linked list in C, we can just access the next element if we have the pointer for that.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;                           
+#include &lt;stdlib.h&gt;     
+                                                 
+struct Node {                                    
+    int data;                                    
+    struct Node* next;                           
+};                                               
+  
+struct Node* new_node(int data) {   
+    struct Node* node = NULL;
+    node = (struct Node*) malloc(sizeof(struct Node));                                                                               
+    
+    node-&gt;data = data;                                                                                                                            
+    node-&gt;next = NULL;                                                                                                                            
+    return node;                                                                                                                                  
+}                                                                                                                                                 
+                                                                                                                                                  
+int main(){                                                                                                                                       
+    struct Node* first_node = new_node(12);                                                                                    
+    struct Node* second_node = new_node(24);                                                                                   
+    return 0;                                                                                                                  
+}
+</code></pre>
+<p>In this code above, I&#39;m creating a function for building a Node dynamically (<a href="https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap">in the Heap, not in Stack</a>). In the <code>main</code> function, I&#39;m creating two nodes. Theoretically, <code>first_node</code> should be pointing to <code>second_node</code>, but it is actually not! Every node is pointing to <code>NULL</code> because of the function <code>create_node</code>, there is no way to access the second node using the first one. One way to solve it is by changing the <code>first_node</code> pointer which is currently <code>NULL</code> to point to the <code>second_node</code>.</p>
+<pre><code class="language-c">int main(){                                                                                                                                       
+    struct Node* first_node = new_node(12);                                                                                    
+    struct Node* second_node = new_node(24);                                                                                   
+
+    first_node-&gt;next = second_node; // Changing the pointer to the next node
+
+    printf(&quot;%d\n&quot;, first_node-&gt;next-&gt;data);
+    return 0;                                                                                                                  
+}
+</code></pre>
+<p>Now I can access the second node from the first node because <code>first_node-&gt;next</code> is currently pointing to <code>second_node</code>.</p>
+<h2 id="references">References</h2>
+<p><a href="http://www.cs.ecu.edu/karl/3300/spr16/Notes/C/Array/pointer.html">Arrays are pointers</a>
+<a href="https://en.wikipedia.org/wiki/Linked_list">Linked List</a></p>
