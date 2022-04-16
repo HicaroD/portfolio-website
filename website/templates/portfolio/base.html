@@ -22,21 +22,24 @@
 
     <body>
         <nav class="navbar">
-        <ul>
-            <li><a href="{% url 'about_me' %}">ABOUT ME</a></li>
-            <li><a href="{% url 'articles' %}">ARTICLES</a></li>
-            <li><a href="{% url 'projects' %}">PROJECTS</a></li>
-            <li><a target="_blank" href="https://drive.google.com/drive/folders/1HEgd8xXOdbcE1ve6Uhzkxa3vlJ06AfjY?usp=sharing">RESUME</a></li>
-        </ul>
-
-        <div class=intro>
-            <h1> {% block secondary_title %} HÍCARO {% endblock secondary_title %} </h1>
-        </div>
-        {% block article_info %}
-        {% endblock %}
-
-        <hr>
+            <ul>
+                <li><a href="{% url 'about_me' %}">ABOUT ME</a></li>
+                <li><a href="{% url 'articles' %}">ARTICLES</a></li>
+                <li><a href="{% url 'projects' %}">PROJECTS</a></li>
+                <li><a target="_blank" href="https://drive.google.com/drive/folders/1HEgd8xXOdbcE1ve6Uhzkxa3vlJ06AfjY?usp=sharing">RESUME</a></li>
+            </ul>
         </nav>
+
+        <nav class="page-intro">
+            <div class="personal-intro">
+                <h1 id="name"><a href="{% url 'articles' %}">Hícaro Dânrlley</a></h1>
+                <ul class="description">
+                    <li>Software developer</li>
+                    <li>Comp.Sci student</li>
+                </ul>
+            </div>
+        </nav>
+        <hr style="width: 45%;">
 
         <main>
             {% block content %}
@@ -53,5 +56,6 @@
                 <li><a href="https://twitch.com/hicaro____">  <i class="fa-brands fa-twitch" style="font-size: 36px;"></i></a></li>
             </ul>
         </div>
+    <script src="{% static 'js/script.js' %}"></script>
     </body>
 </html>
