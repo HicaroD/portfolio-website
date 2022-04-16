@@ -1,7 +1,7 @@
 env/
-website/website_portfolio/.env
-website/website_portfolio/__pycache__
-website/articles/__pycache__
-website/portfolio/__pycache__
-website/portfolio/migrations/__pycache__
+website_portfolio/.env
+website_portfolio/__pycache__
+articles/__pycache__
+portfolio/__pycache__
+portfolio/migrations/__pycache__
 notes.txt
