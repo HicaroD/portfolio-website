@@ -9,9 +9,6 @@ def index(request):
 def about_me(request):
     return render(request, "portfolio/about_me.html")
 
-def contact(request):
-    return render(request, "portfolio/contact.html")
-
 class Projects(ListView):
     model = Project
     template_name = "portfolio/projects.html"
