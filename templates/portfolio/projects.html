@@ -4,7 +4,7 @@
 {% block title %} Projects {% endblock %}
 
 {% block content %}
-{% for project in projects %}
+{% for project in object_list %}
 <a class="project-link" href="{{ project.project_link }}">
 	<div class="project">
 		<div class="info">
