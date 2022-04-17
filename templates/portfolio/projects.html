@@ -9,7 +9,7 @@
 	<div class="project">
 		<div class="info">
 			<h2 id="name">{{ project.title }}</h2>
-			<p id="description"><i>{{ project.description }}</i></p>
+			<p id="description">{{ project.description }}</p>
 		</div>
 		<div class="tech-icons">
 			{% for tech in project.get_technologies %}
@@ -17,43 +17,43 @@
 				<img src="{% static 'portfolio/images/tech_logo/rust.png' %}" alt="">
 				{% endif %}	
 
-				{% if tech == "python" %}	
+				{% if tech == "python" %}
 				<img src="{% static 'portfolio/images/tech_logo/python.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "go" %}	
+				{% if tech == "go" %}
 				<img src="{% static 'portfolio/images/tech_logo/go.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "django" %}	
+				{% if tech == "django" %}
 				<img src="{% static 'portfolio/images/tech_logo/django.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "postgresql" %}	
+				{% if tech == "postgresql" %}
 				<img src="{% static 'portfolio/images/tech_logo/postgresql.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "bootstrap" %}	
+				{% if tech == "bootstrap" %}
 				<img src="{% static 'portfolio/images/tech_logo/bootstrap.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "html" %}	
+				{% if tech == "html" %}
 				<img src="{% static 'portfolio/images/tech_logo/html.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "css" %}	
+				{% if tech == "css" %}
 				<img src="{% static 'portfolio/images/tech_logo/css.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "docker" %}	
+				{% if tech == "docker" %}
 				<img src="{% static 'portfolio/images/tech_logo/docker.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "sqlite" %}	
+				{% if tech == "sqlite" %}
 				<img src="{% static 'portfolio/images/tech_logo/sqlite.png' %}" alt="">
-				{% endif %}	
+				{% endif %}
 
-				{% if tech == "heroku" %}	
+				{% if tech == "heroku" %}
 				<img src="{% static 'portfolio/images/tech_logo/heroku.png' %}" alt="">
 				{% endif %}
 
