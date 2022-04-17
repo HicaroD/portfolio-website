@@ -53,3 +53,17 @@
 #my-name {
     border-bottom: solid 2px #FFC93C;
 }
+
+@media (max-width: 800px) {
+    .article-item {
+        flex-wrap: wrap;
+    }
+
+    .info li {
+        display: inline-flex;
+    }
+
+    .info, .info ul {
+        padding: 0px;
+    }
+}
