@@ -56,16 +56,15 @@ a {
 }
 
 .navbar {
-    margin: 0 auto;
-    width: 45%;
     font-family: "Cinzel";
     font-weight: bold;
+    width: 45%;
+    margin: 0 auto;
 }
 
 .navbar ul {
     display: flex;
-    margin: 0 auto;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .navbar a {
