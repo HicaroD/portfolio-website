@@ -50,9 +50,6 @@
     border-bottom: solid 2px white;
 }
 
-#my-name {
-    border-bottom: solid 2px #FFC93C;
-}
 
 @media (max-width: 800px) {
     .article-item {

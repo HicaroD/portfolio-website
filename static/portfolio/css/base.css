@@ -111,3 +111,7 @@ hr {
     margin-right: auto;
     padding: 0px;
 }
+
+#my-name {
+    border-bottom: solid 2px #FFC93C;
+}
