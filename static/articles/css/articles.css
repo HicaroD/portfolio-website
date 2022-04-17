@@ -13,12 +13,11 @@
     padding: 10px;
 }
 
-.article-item a, .article-body a {
+.article-item a,
+.article-body a,
+.article-item a:visited,
+.article-body a:visited {
     text-decoration: none;
-    color: #3391ff;
-}
-
-.article-item a:visited, .article-body a:visited {
     color: #3391ff;
 }
 
