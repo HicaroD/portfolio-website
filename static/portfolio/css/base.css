@@ -67,6 +67,10 @@ a {
     flex-wrap: wrap;
 }
 
+.navbar li {
+    padding: 3px;
+}
+
 .navbar a {
     color: #FFC93C;
 }
