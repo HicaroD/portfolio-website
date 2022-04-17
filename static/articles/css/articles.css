@@ -8,9 +8,10 @@
 
 .article-item {
     display: flex;
-    justify-content: space-between;
-    border-bottom: solid 1px grey;
-    padding: 10px;
+}
+
+.info, .article-item {
+    padding-top: 10px;
 }
 
 .article-item a,
