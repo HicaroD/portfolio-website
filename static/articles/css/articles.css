@@ -50,6 +50,9 @@
     border-bottom: solid 2px white;
 }
 
+code {
+    font-family: "Fantasques";
+}
 
 @media (max-width: 800px) {
     .article-item {

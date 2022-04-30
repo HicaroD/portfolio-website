@@ -8,6 +8,11 @@
     src: url('../../fonts/Metropolis-Medium.otf');
 }
 
+@font-face {
+    font-family: "Fantasques";
+    src: url('../../fonts/fantasquesansmono-regular.otf');
+}
+
 .page-intro {
     display: flex;
     width: 45%;
