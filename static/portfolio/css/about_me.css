@@ -1,7 +1,6 @@
 .personal-image img {
     border-radius: 50%;
-    width: auto;
-    height: 200px;
+    max-height: 110px;
 }
 
 .personal-image {
