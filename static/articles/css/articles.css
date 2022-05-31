@@ -44,6 +44,7 @@
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    padding-left: 0px;
 }
 
 .article-body h2, .article-body h3 {
