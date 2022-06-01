@@ -2,3 +2,14 @@
     margin: 0 auto;
     width: 45%;
 }
+
+.john_travolta {
+    display: block;
+    width: 45%;
+    margin: 0 auto;
+}
+
+.john_travolta img {
+    width: 100%;
+    height: auto;
+}
