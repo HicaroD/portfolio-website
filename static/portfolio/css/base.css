@@ -14,11 +14,16 @@
 }
 
 .page-intro {
-    display: flex;
-    width: 45%;
+    width: 55%;
     margin: 0 auto;
     font-family: "Cinzel";
     justify-content: space-between;
+}
+
+#my-name {
+    display: inline-block;
+    border-bottom: solid 2px #FFC93C;
+    margin: 0;
 }
 
 .links {
@@ -34,11 +39,6 @@
 
 .links a {
     text-decoration: none;
-}
-
-.description {
-    list-style: none;
-    padding-left: 0;
 }
 
 .dates li {
@@ -63,7 +63,7 @@ a {
 .navbar {
     font-family: "Cinzel";
     font-weight: bold;
-    width: 45%;
+    width: 55%;
     margin: 0 auto;
 }
 
@@ -106,17 +106,13 @@ a {
 
 hr {
     color: #FFC93C;
-    width: 45%;
+    width: 55%;
 }
 
 .socials ul {
-    width: 45%;
+    width: 55%;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
     padding: 0px;
-}
-
-#my-name {
-    border-bottom: solid 2px #FFC93C;
 }
